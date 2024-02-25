@@ -1,0 +1,78 @@
+[versions]
+agp = "8.2.0"
+kotlin = "1.9.10"
+core-ktx = "1.12.0"
+junit = "4.13.2"
+androidx-test-ext-junit = "1.1.5"
+espresso-core = "3.5.1"
+appcompat = "1.6.1"
+material = "1.11.0"
+constraintlayout = "2.1.4"
+retrofit= "2.9.0"
+lifecycle = "2.6.2"
+coroutines = "1.7.2"
+koin = "3.5.3"
+androidx_startup = "1.1.1"
+chucker = "4.0.0"
+coil = "2.4.0"
+swiperefreshlayout = "1.1.0"
+mockk = "1.13.8"
+kotlin-coroutine-test = "1.7.2"
+turbine = "1.0.0"
+core-testing = "2.2.0"
+
+
+[libraries]
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+
+
+#lifecycle
+lifecycle_viewmodel_ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifecycle_core_ktx = { module = "androidx.lifecycle:lifecycle-livedata-core-ktx", version.ref = "lifecycle" }
+lifecycle_livedata_ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle" }
+
+#app startup
+androidx_startup = { module = "androidx.startup:startup-runtime", version.ref = "androidx_startup" }
+
+#koin
+koin_android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+
+#coil Image Loader
+coil = { module = 'io.coil-kt:coil', version.ref = "coil" }
+
+#network
+retrofit_client = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit_gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+
+#coroutines
+coroutine_core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutine_android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+
+#chucker
+chucker = { module = "com.github.chuckerteam.chucker:library", version.ref = "chucker" }
+chucker_noop = { module = "com.github.chuckerteam.chucker:library-no-op", version.ref = "chucker" }
+androidx-swiperefreshlayout = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swiperefreshlayout" }
+
+#unit test
+mockk-android = { group = "io.mockk", name = "mockk-android", version.ref = "mockk" }
+mockk-agent = { group = "io.mockk", name = "mockk-agent", version.ref = "mockk" }
+kotlin-coroutine-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlin-coroutine-test" }
+turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
+core-testing = { group = "androidx.arch.core", name = "core-testing", version.ref = "core-testing" }
+
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
+[bundles]
+lifecycle = ["lifecycle.viewmodel.ktx", "lifecycle.core.ktx", "lifecycle.livedata.ktx"]
+coroutine = ["coroutine_core", "coroutine_android"]
+retrofit = ["retrofit_client", "retrofit_gson"]
+unittest = ["mockk-android", "mockk-agent","kotlin-coroutine-test","turbine","core-testing"]

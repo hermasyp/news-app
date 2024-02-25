@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">News App</string>
+    <string name="text_error_no_network">Oops, Something wrong when surf the internet.\n Please check your internet connection and swipe to retry again.</string>
+    <string name="text_error_common">Oops, Something went wrong. Please wait a moment and swipe to retry again.</string>
+    <string name="text_error_data_empty">We can\'t find any result. </string>
+
 </resources>
