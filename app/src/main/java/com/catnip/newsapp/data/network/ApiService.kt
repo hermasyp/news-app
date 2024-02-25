@@ -2,6 +2,7 @@ package com.catnip.newsapp.data.network
 
 import com.catnip.newsapp.BuildConfig
 import com.catnip.newsapp.data.constants.CommonConstants
+import com.catnip.newsapp.data.model.news.NewsResponses
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
