@@ -9,7 +9,7 @@ Github : https://github.com/hermasyp
  **/
 
 fun NewsItem.toNews(): News = News(
-    status = this.status.orEmpty(),
+    author = this.author.orEmpty(),
     title = this.title.orEmpty(),
     url = this.url.orEmpty(),
     publishedAt = this.publishedAt.orEmpty()

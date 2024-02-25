@@ -12,7 +12,7 @@ import retrofit2.http.Query
 import java.util.concurrent.TimeUnit
 
 interface ApiService {
-    @GET("listings.json")
+    @GET("top-headlines")
     suspend fun getNews(
         @Query("country") country: String = CommonConstants.COUNTRY,
         @Query("apiKey") apiKey: String = BuildConfig.API_KEY

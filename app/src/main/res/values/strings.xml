@@ -3,5 +3,21 @@
     <string name="text_error_no_network">Oops, Something wrong when surf the internet.\n Please check your internet connection and swipe to retry again.</string>
     <string name="text_error_common">Oops, Something went wrong. Please wait a moment and swipe to retry again.</string>
     <string name="text_error_data_empty">We can\'t find any result. </string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_news_list">News List</string>
+    <string name="title_profile">Profile</string>
+    <string name="text_name">Muhammad Hermas Yuda P</string>
+    <string name="text_username">magnus</string>
+    <string name="text_logout">Logout</string>
+    <string name="hello">Hello !</string>
+    <string name="text_desc_app">This is an App to see top news in Indonesia.\nYou can check the news tab to open list of news</string>
+    <string name="text_placeholder_btn_login">Login</string>
+    <string name="text_hint_username">Username</string>
+    <string name="text_hint_password">Password</string>
+    <string name="login_page">Login Page</string>
+    <string name="text_error_username_empty">Username is Empty</string>
+    <string name="text_error_password_empty">Password is Empty</string>
+    <string name="news_app">News App</string>
 
 </resources>

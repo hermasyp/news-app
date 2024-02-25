@@ -19,8 +19,8 @@ interface UserDataSource {
 class UserDataSourceImpl(private val sharedPreferences: SharedPreferences) : UserDataSource {
 
     companion object {
-        fun createPreference(context: Context) {
-            SharedPreferenceUtils.createPreference(context, PreferenceConstants.PREF_NAME)
+        fun createPreference(context: Context) : SharedPreferences{
+            return SharedPreferenceUtils.createPreference(context, PreferenceConstants.PREF_NAME)
         }
     }
 

@@ -1,6 +1,5 @@
 package com.catnip.newsapp.di
 
-import android.service.autofill.UserData
 import com.catnip.newsapp.data.datasource.NewsDataSource
 import com.catnip.newsapp.data.datasource.NewsDataSourceImpl
 import com.catnip.newsapp.data.datasource.UserDataSource
@@ -10,10 +9,16 @@ import com.catnip.newsapp.data.repository.NewsRepository
 import com.catnip.newsapp.data.repository.NewsRepositoryImpl
 import com.catnip.newsapp.data.repository.UserRepository
 import com.catnip.newsapp.data.repository.UserRepositoryImpl
+import com.catnip.newsapp.domain.usecase.CheckUserLoginUseCase
 import com.catnip.newsapp.domain.usecase.GetNewsUseCase
 import com.catnip.newsapp.domain.usecase.LoginUseCase
+import com.catnip.newsapp.domain.usecase.LogoutUseCase
+import com.catnip.newsapp.presentation.feature.login.LoginViewModel
+import com.catnip.newsapp.presentation.feature.main.MainViewModel
+import com.catnip.newsapp.presentation.feature.splash.SplashViewModel
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import org.koin.android.ext.koin.androidContext
+import org.koin.androidx.viewmodel.dsl.viewModelOf
 import org.koin.core.module.Module
 import org.koin.dsl.module
 import retrofit2.converter.gson.GsonConverterFactory
@@ -47,10 +52,14 @@ object AppModules {
     private val useCaseModule = module {
         single { GetNewsUseCase(get()) }
         single { LoginUseCase(get()) }
+        single { LogoutUseCase(get()) }
+        single { CheckUserLoginUseCase(get()) }
     }
 
     private val viewModelModule = module {
-
+        viewModelOf(::MainViewModel)
+        viewModelOf(::SplashViewModel)
+        viewModelOf(::LoginViewModel)
     }
 
     val modules: List<Module> = listOf(

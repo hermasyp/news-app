@@ -8,7 +8,7 @@ Github : https://github.com/hermasyp
  **/
 data class NewsItem(
     @SerializedName("author")
-    val status: String?,
+    val author: String?,
     @SerializedName("title")
     val title: String?,
     @SerializedName("url")
