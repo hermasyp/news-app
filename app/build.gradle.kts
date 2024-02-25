@@ -37,6 +37,17 @@ android {
         viewBinding = true
         buildConfig = true
     }
+    flavorDimensions += "environment"
+    productFlavors {
+        create("mockEnv") {
+            dimension = "environment"
+            buildConfigField("String", "BASE_URL", "\"https://newsapi.org/v2/\"")
+            buildConfigField("String", "API_KEY", "\"7b0b606b13304c71b64ff4c930237004\"")
+        }
+    }
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+    }
 }
 
 dependencies {
