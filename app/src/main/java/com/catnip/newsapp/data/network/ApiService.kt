@@ -2,7 +2,6 @@ package com.catnip.newsapp.data.network
 
 import com.catnip.newsapp.BuildConfig
 import com.catnip.newsapp.data.constants.CommonConstants
-import com.catnip.newsapp.data.model.news.NewsResponses
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -21,13 +20,19 @@ interface ApiService {
     companion object {
         @JvmStatic
         operator fun invoke(
-            chucker: ChuckerInterceptor, gsonConverterFactory: GsonConverterFactory
+            chucker: ChuckerInterceptor,
+            gsonConverterFactory: GsonConverterFactory
         ): ApiService {
-            val okHttpClient =
-                OkHttpClient.Builder().addInterceptor(chucker).connectTimeout(120, TimeUnit.SECONDS)
-                    .readTimeout(120, TimeUnit.SECONDS).build()
-            val retrofit = Retrofit.Builder().baseUrl(BuildConfig.BASE_URL)
-                .addConverterFactory(gsonConverterFactory).client(okHttpClient).build()
+            val okHttpClient = OkHttpClient.Builder()
+                .addInterceptor(chucker)
+                .connectTimeout(120, TimeUnit.SECONDS)
+                .readTimeout(120, TimeUnit.SECONDS)
+                .build()
+            val retrofit = Retrofit.Builder()
+                .baseUrl(BuildConfig.BASE_URL)
+                .addConverterFactory(gsonConverterFactory)
+                .client(okHttpClient)
+                .build()
             return retrofit.create(ApiService::class.java)
         }
     }
